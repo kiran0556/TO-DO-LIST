@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To-Do List — Stylish Vanilla JS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <div class="title-block">
+        <h1>✨ My Tasks</h1>
+        <p class="subtitle">Focus on what matters — simple, clean & responsive</p>
+      </div>
+
+      <form id="todo-form" class="input-row" aria-label="Add todo">
+        <label for="todo-input" class="sr-only">Add task</label>
+        <div class="input-wrap">
+          <svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"/></svg>
+          <input id="todo-input" type="text" placeholder="Add a new task — e.g. Study OS chapter 3" autocomplete="off" required />
+        </div>
+        <button id="add-btn" type="submit" class="btn-primary">Add</button>
+      </form>
+    </header>
+
+    <section class="card">
+      <div class="card-controls">
+        <div class="filters" role="tablist" aria-label="Filter tasks">
+          <button class="filter active" data-filter="all" role="tab">All</button>
+          <button class="filter" data-filter="active" role="tab">Active</button>
+          <button class="filter" data-filter="completed" role="tab">Completed</button>
+        </div>
+
+        <div class="right-controls">
+          <span id="counter" class="counter">0 tasks</span>
+          <button id="clear-completed" class="link">Clear completed</button>
+        </div>
+      </div>
+
+      <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <svg viewBox="0 0 64 64" class="empty-illus" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 54h48M20 10h24v18H20z"/>
+            <path d="M26 18h12M26 24h12"/>
+            <circle cx="18" cy="34" r="4"/><circle cx="46" cy="34" r="4"/>
+          </g>
+        </svg>
+        <p>No tasks yet — add your first task above.</p>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <small>Tip: Double-click task text to edit. Tasks are saved locally in your browser.</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
